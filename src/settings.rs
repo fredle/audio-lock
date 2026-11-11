@@ -13,6 +13,12 @@ pub struct Settings {
     /// a day.
     #[serde(default)]
     pub last_update_check: u64,
+    /// Microphones whose level is locked.
+    #[serde(default)]
+    pub locked_mics: Vec<crate::logic::LockedMic>,
+    /// Pinned default playback/recording devices.
+    #[serde(default)]
+    pub pins: crate::logic::Pins,
 }
 
 fn default_true() -> bool {
@@ -24,6 +30,8 @@ impl Default for Settings {
         Self {
             auto_update: true,
             last_update_check: 0,
+            locked_mics: Vec::new(),
+            pins: Default::default(),
         }
     }
 }

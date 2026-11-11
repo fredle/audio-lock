@@ -6,6 +6,9 @@
 #![windows_subsystem = "windows"]
 
 mod app;
+mod audio;
+mod autostart;
+mod logic;
 mod settings;
 mod update;
 
