@@ -49,6 +49,8 @@ struct Tray {
 pub struct App {
     settings: crate::settings::Settings,
     version: String,
+    /// "What would make this better?" (src/feedback.rs).
+    feedback: crate::feedback::Feedback,
     engine: Arc<Engine>,
     tray: Option<Tray>,
     tab: Tab,
@@ -75,6 +77,7 @@ impl App {
         Self {
             settings,
             version: crate::update::current_version(),
+            feedback: Default::default(),
             engine,
             tray,
             tab: Tab::Microphones,
@@ -357,6 +360,8 @@ impl App {
             }
             ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                 ui.weak(format!("v{}", self.version));
+                ui.add_space(8.0);
+                self.feedback.link(ui);
             });
         });
     }
@@ -424,6 +429,8 @@ impl eframe::App for App {
                 Tab::Activity => self.activity_tab(ui),
             }
         });
+            let feedback_ctx = ui_root.ctx().clone();
+        self.feedback.show(&feedback_ctx, &self.version, false);
     }
 }
 

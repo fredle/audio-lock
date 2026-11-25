@@ -54,7 +54,9 @@ Utilities & tools > System utilities (alternatively: Multimedia design > Audio)
 
 Stored locally in `%LOCALAPPDATA%\AudioLock\settings.json`: which microphones are locked and at what level, which default devices are pinned, and the auto-update preference. The activity log lives in memory only and is cleared on exit. If "Start with Windows" is enabled, one value is added to the current user's Run registry key.
 
-Network: the only network call is a check against this project's GitHub Releases for a newer version, about once a day, and only when "Automatically update" is on. No audio is recorded or read, no data is sent anywhere, there is no telemetry and no account.
+Network: apart from a feedback note you choose to send (below), the only network call is a check against this project's GitHub Releases for a newer version, about once a day, and only when "Automatically update" is on. No audio is recorded or read, nothing else is sent anywhere, there is no telemetry and no account.
+
+Feedback: the "What would make this better?" link in the window lets you send the developer a short note. Only the note, the app's name and version, and the platform are sent, to the developer's server at feedback.leatham.net, and only when you press Send. No name, email address or device identifier is sent, and the server does not keep IP addresses. Notes are used only to improve the app and are never shared or sold.
 
 ## Screenshot ideas
 

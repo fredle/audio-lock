@@ -109,6 +109,7 @@ dependencies = [
  "serde",
  "serde_json",
  "tray-icon",
+ "ureq",
  "velopack",
  "windows",
  "windows-core",
