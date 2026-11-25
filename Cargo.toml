@@ -1,6 +1,6 @@
 [package]
 name = "audio_lock"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Stops apps changing your mic level and Windows switching your default audio device."
 repository = "https://github.com/fredle/audio-lock"
